@@ -1,3 +1,26 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:d9330fa44fd791e43d52a5980622ab07992e380fb562b250c616c19a1365f2ec
-size 510
+ xjsd-hand-tnn
+这是手势算法TNN部署工程，基于cmake构建跨平台编译
+
+windows平台构建
+
+安装cmake>3.4版本
+安装visual studio
+
+
+mkdir build/x64 
+cmake ./ -B build/x64 -A x64 -G "Visual Studio 17 2022"
+cd build/x64
+cmake --build ./
+
+
+
+android平台构建
+
+安装cmake>3.4版本
+安装 ndk>r21
+
+
+mkdir build/armeabi-v7a
+python tools/android_cmake_build.py -n E:/Andriod/android-ndk-r25b -a armeabi-v7a -i ./ -o build/armeabi-v7a
+cd build/armeabi-v7a
+cmake --build ./
